@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { findComponentsDownward } from '../../utils/assists.js';
+  import { findComponentsDownward } from '../../utils/assist.js';
   import Emitter from '../../mixins/emitter.js';
   export default {
     name: 'iCheckboxGroup',
@@ -26,7 +26,7 @@
     },
     methods: {
       updateModel (update) {
-        this.childrens = findComponentsDownward(this, 'iCheckBox');
+        this.childrens = findComponentsDownward(this, 'iCheckbox');
         if (this.childrens) {
           const { value } = this;
           this.childrens.forEach(child => {

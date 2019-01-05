@@ -13,6 +13,7 @@
         type="checkbox"
         :disabled="disabled"
         :value="label"
+        :checked="currentValue"
         @change="change">
     </span>
     <slot></slot>
@@ -58,8 +59,12 @@
     mounted () {
       this.parent = findComponentUpward(this, 'iCheckboxGroup');
 
-      if (this.parent) {
+      if(this.parent) {
         this.group = true;
+      }
+
+      if (this.parent) {
+        this.parent.updateModel(true);
       } else {
         this.updateModel();
       }
