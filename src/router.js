@@ -21,7 +21,10 @@ export default new Router({
       path: '/alert',
       component: () => import('./views/alert.vue')
     },
-,
+    {
+      path: '/table-render',
+      component: () => import('./views/table-render.vue')
+    }
 
   ]
 })
